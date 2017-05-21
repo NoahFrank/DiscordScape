@@ -35,7 +35,7 @@ const client = bot
     .registerDefaults()
     .registerModules([
         ['general', 'General'],
-        ['something', 'Some module']
+        ['discordscape', 'DiscordScape']
     ])
     .registerCommands([
         TestCommand
