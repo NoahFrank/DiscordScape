@@ -16,7 +16,7 @@ module.exports = class RegisterCommand extends graf.Command {
         });
     }
 
-    run(message, args) {
+    run(message, args) { // TODO WHAT IF SOMEONE HAS ALREADY REGISTERED AND DOES IT AGAIN DUMMYHEAD
         const author = message.author;
         const user = new DiscordUser(author.id, author.username, author.discriminator);
         console.log(`Discord user: "${user.getDiscordUsername()}" executed register command`);

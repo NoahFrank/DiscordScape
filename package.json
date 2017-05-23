@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/NoahFrank/discordscape#readme",
   "dependencies": {
+    "config": "^1.26.1",
     "discord-graf": "^0.15.4",
     "discord.js": "^11.1.0",
     "enumify": "^1.0.4",

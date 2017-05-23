@@ -12,7 +12,7 @@ module.exports = class InventoryCommand extends graf.Command {
             usage: 'inventory [page number]',
             details: 'Displays which items are in a player\'s inventory and the quantity of each of item.',
             examples: ['inv', 'inventory', 'inv 2'],
-            argsType: 'multiple'
+            argsType: 'multiple' // TODO: WHY THE FUCK CAN'T I JUST PUT NO ARGS
         });
     }
 
@@ -22,7 +22,6 @@ module.exports = class InventoryCommand extends graf.Command {
         // Pull playerid info from storage then return inventory
         return storage.getItem(player_id)
             .then( (player) => {
-                console.log(player);
                 return `You have ${player.inventory.gold} gold, and ${player.inventory.items.length} items.`;
             })
             .catch( (err) => {
