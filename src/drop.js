@@ -5,4 +5,4 @@ class Drop {
     }
 }
 
-module.exports.Drop = Drop;
+module.exports = Drop;

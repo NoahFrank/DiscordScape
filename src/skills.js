@@ -12,4 +12,4 @@ class Skills {
     }
 }
 
-module.exports.Skills = Skills;
+module.exports = Skills;

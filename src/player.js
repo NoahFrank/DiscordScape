@@ -13,4 +13,4 @@ class Player {
     }
 }
 
-module.exports.Player = Player;
+module.exports = Player;

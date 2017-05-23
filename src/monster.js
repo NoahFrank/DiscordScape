@@ -19,4 +19,4 @@ class Monster {
     }
 }
 
-module.exports.Monster = Monster;
+module.exports = Monster;

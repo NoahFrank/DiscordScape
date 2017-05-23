@@ -1,6 +1,6 @@
-import {Enum} from 'enumify';
+const Enumify = require('enumify');
 
-class Locations extends Enum {}
+class Locations extends Enumify.Enum {}
 Locations.initEnum([
     'ZARROCK',
     'UMBRIDGE',
@@ -12,4 +12,4 @@ Locations.initEnum([
     'DAVERLY'
 ]);
 
-module.exports.Locations = Locations;
+module.exports = Locations;

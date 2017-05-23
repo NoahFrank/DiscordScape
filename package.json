@@ -19,7 +19,8 @@
   "dependencies": {
     "discord-graf": "^0.15.4",
     "discord.js": "^11.1.0",
-    "enumify": "^1.0.4"
+    "enumify": "^1.0.4",
+    "node-persist": "^2.0.11"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

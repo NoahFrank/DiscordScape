@@ -5,4 +5,4 @@ class Inventory {
     }
 }
 
-module.exports.Inventory = Inventory;
+module.exports = Inventory;
