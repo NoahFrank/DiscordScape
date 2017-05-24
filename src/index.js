@@ -6,7 +6,7 @@ const config = require('config');
 storage.initSync();
 
 //console.log("CLEARING STORAGE");
-//storage.clearSync();
+storage.clearSync();
 
 module.exports.Storage = storage;
 
@@ -25,6 +25,7 @@ const RegisterCommand = require('./commands/discordscape/registerCmd');
 const InventoryCommand = require('./commands/discordscape/inventoryCmd');
 const ExploreCommand = require('./commands/discordscape/exploreCmd');
 const TravelCommand = require('./commands/discordscape/travelCmd');
+const MapCommand = require('./commands/discordscape/mapCmd');
 
 const client = bot
     .registerDefaults()
@@ -36,6 +37,7 @@ const client = bot
         RegisterCommand,
         InventoryCommand,
         ExploreCommand,
-        TravelCommand
+        TravelCommand,
+        MapCommand
     ])
 .createClient();
