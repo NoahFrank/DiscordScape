@@ -5,8 +5,8 @@ const config = require('config');
 // init storage where we store player data
 storage.initSync();
 
-console.log("CLEARING STORAGE");
-storage.clearSync();
+//console.log("CLEARING STORAGE");
+//storage.clearSync();
 
 module.exports.Storage = storage;
 
@@ -17,13 +17,14 @@ const bot = new graf.Bot({
     about: `**DiscordBot** v${version} created by Noah and Cole.`,
     updateURL: 'https://raw.githubusercontent.com/NoahFrank/DiscordScape/master/package.json',
     token: config.get('token'),
-    commandPrefix: '-'
+    commandPrefix: '~'
 });
 
 
 const RegisterCommand = require('./commands/discordscape/registerCmd');
 const InventoryCommand = require('./commands/discordscape/inventoryCmd');
 const ExploreCommand = require('./commands/discordscape/exploreCmd');
+const TravelCommand = require('./commands/discordscape/travelCmd');
 
 const client = bot
     .registerDefaults()
@@ -34,6 +35,7 @@ const client = bot
     .registerCommands([
         RegisterCommand,
         InventoryCommand,
-        ExploreCommand
+        ExploreCommand,
+        TravelCommand
     ])
 .createClient();
