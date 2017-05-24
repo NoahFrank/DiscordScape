@@ -19,8 +19,7 @@ module.exports = class ExploreCommand extends graf.Command {
         // Pull playerid info from storage then print explore options from location
         return storage.getItem(player_id)
             .then( (player) => {
-                console.log(player.location);
-                return `Your current location is ${player.location.name} : ${player.location.explore}`;
+                return `Your current location is ${player.location.pretty_name} : ${player.location.explore}`;
             })
             .catch( (err) => {
                 return `Please create a character by running the "register" command!`;

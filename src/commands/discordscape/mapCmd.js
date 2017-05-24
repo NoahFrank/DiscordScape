@@ -16,12 +16,12 @@ module.exports = class MapCommand extends graf.Command {
 
     run(message, args) {
 
-        var locations_list = '```';
-        for (var i = 0; i < LOCS.enumValues.length; i++) {
-            locations_list += `(${i+1}) ${LOCS.enumValues[i].name} \n`
+        let locations_list = '```';
+        for (let loc of LOCS.enumValues) {
+            locations_list += `- ${loc.pretty_name} \n`
         }
-        locations_list += '```'
+        locations_list += '```';
 
         return Promise.resolve('Where would you like to go?\n'+locations_list);
     }
-}
+};
