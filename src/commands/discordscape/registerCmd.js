@@ -2,6 +2,7 @@ const graf = require('discord-graf');
 const storage = require('../../index').Storage;
 const Player = require('../../player');
 const DiscordUser = require('../../discordUser');
+const _ = require('lodash/collection');
 
 module.exports = class RegisterCommand extends graf.Command {
     constructor(bot) {
@@ -16,12 +17,16 @@ module.exports = class RegisterCommand extends graf.Command {
         });
     }
 
-    run(message, args) { // TODO WHAT IF SOMEONE HAS ALREADY REGISTERED AND DOES IT AGAIN DUMMYHEAD
+    run(message, args) {
         const author = message.author;
         const user = new DiscordUser(author.id, author.username, author.discriminator);
         console.log(`Discord user: "${user.getDiscordUsername()}" executed register command`);
         // Store player with ID as unique discord username
-        storage.setItem(user.getID(), new Player(user));
-        return Promise.resolve(`Adventurer ${user.getName()} has entered the world of DiscordScape!`);
+        if ( _.includes(storage.keys(), user.getID()) ) { // Make sure user hasn't already been created
+            return Promise.resolve(`You have already began your adventure...GO FORTH ${user.getName().toUpperCase()}!`);
+        } else {
+            storage.setItem(user.getID(), new Player(user)); // Create new Player for this discord user
+            return Promise.resolve(`Adventurer ${user.getName()} has entered the world of DiscordScape!`);
+        }
     }
 };

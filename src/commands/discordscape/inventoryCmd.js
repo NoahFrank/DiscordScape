@@ -11,13 +11,11 @@ module.exports = class InventoryCommand extends graf.Command {
             description: 'Displays the player\'s inventory',
             usage: 'inventory [page number]',
             details: 'Displays which items are in a player\'s inventory and the quantity of each of item.',
-            examples: ['inv', 'inventory', 'inv 2'],
-            argsType: 'multiple' // TODO: WHY THE FUCK CAN'T I JUST PUT NO ARGS
+            examples: ['inv', 'inventory', 'inv 2']
         });
     }
 
     run(message, args) {
-        if(!args[0]) throw new graf.CommandFormatError(this, message.guild);
         const player_id = message.author.id;
         // Pull playerid info from storage then return inventory
         return storage.getItem(player_id)

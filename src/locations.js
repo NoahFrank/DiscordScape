@@ -9,7 +9,8 @@ Locations.initEnum([
     'DAYNOR',
     'FORT_SARIM',
     'GIRTHRUPE',
-    'DAVERLY'
+    'DABERLY',
+    'VAS_LEGAS'
 ]);
 
 module.exports = Locations;

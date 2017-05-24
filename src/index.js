@@ -15,8 +15,8 @@ const bot = new graf.Bot({
     version: version,
     about: `**DiscordBot** v${version} created by Noah and Cole.`,
     updateURL: 'https://raw.githubusercontent.com/NoahFrank/DiscordScape/master/package.json',
-    token: config.get('key'),
-    commandPrefix: '.'
+    token: config.get('token'),
+    commandPrefix: '-'
 });
 
 
