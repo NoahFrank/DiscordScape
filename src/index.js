@@ -3,9 +3,10 @@ const graf = require('discord-graf');
 const config = require('config');
 
 // init storage where we store player data
-storage.init({
-    dir: '../storage'
-});
+storage.initSync();
+
+console.log("CLEARING STORAGE");
+storage.clearSync();
 
 module.exports.Storage = storage;
 
@@ -22,6 +23,7 @@ const bot = new graf.Bot({
 
 const RegisterCommand = require('./commands/discordscape/registerCmd');
 const InventoryCommand = require('./commands/discordscape/inventoryCmd');
+const ExploreCommand = require('./commands/discordscape/exploreCmd');
 
 const client = bot
     .registerDefaults()
@@ -31,6 +33,7 @@ const client = bot
     ])
     .registerCommands([
         RegisterCommand,
-        InventoryCommand
+        InventoryCommand,
+        ExploreCommand
     ])
 .createClient();
